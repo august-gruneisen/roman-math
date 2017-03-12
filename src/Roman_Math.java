@@ -272,13 +272,3 @@ public class Roman_Math {
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
