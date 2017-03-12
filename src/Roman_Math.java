@@ -616,6 +616,20 @@ public class Roman_Math {
 		
 		return result;
 	}
+	
+	public String MMDCCCIVplusMCXCV() {
+		String first = "MMDCCCIV";
+		String second = "MCXCV";
+		
+		first = toIs(first);
+		second = toIs(second);
+		
+		String sum = (first + second);
+		
+		String result = toRomans(sum);
+		
+		return result;
+	}
 
 }
 
