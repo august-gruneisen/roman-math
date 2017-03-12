@@ -2,7 +2,8 @@ package Application;
 
 import javax.swing.JOptionPane;
 
-/* Roman_Math adds two Roman numerals together and displays the result as a Roman numeral.
+/* 
+ * Roman_Math adds two Roman numerals together and displays the result as a Roman numeral.
  * No integers were used to write this program.
  */
 
