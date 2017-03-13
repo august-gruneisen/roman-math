@@ -1,6 +1,5 @@
-package Application;
-
-/* This is a GUI for adding Roman numerals together and producing the result as a Roman numeral.
+/* 
+ * This is a GUI for adding Roman numerals together and producing the result as a Roman numeral.
  * Uses the Roman_Calculator class.
  */
 import java.awt.EventQueue;

@@ -1,4 +1,4 @@
-package Application;
+/* Uses the Roman_Math class */
 
 public class Roman_Calculator {
 	
@@ -18,6 +18,6 @@ public class Roman_Calculator {
 	
 	public static String subtractRomans(String firstRoman, String secondRoman) {
 		// need to write function for subtracting Roman numerals
-		return "This function is not written yet";
+		return "This function is not yet written";
 	}
 }
