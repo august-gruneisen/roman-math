@@ -108,6 +108,11 @@ public class Roman_Calculator_GUI {
 		frmRomanCalculator.getContentPane().add(btnMultiply);
 		
 		btnDivide = new JButton("DIVIDE");
+		btnDivide.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textFieldResult.setText(Roman_Calculator.divideRomans(textFieldFirstRoman.getText(), textFieldSecondRoman.getText()));
+			}
+		});
 		btnDivide.setBounds(220, 113, 200, 40);
 		frmRomanCalculator.getContentPane().add(btnDivide);
 	}
