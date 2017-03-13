@@ -17,7 +17,23 @@ public class Roman_Calculator {
 	}
 	
 	public static String subtractRomans(String firstRoman, String secondRoman) {
-		// need to write function for subtracting Roman numerals
-		return "This function is not yet written";
+		
+		String first = firstRoman;
+		String second = secondRoman;
+		String difference;
+		
+		first = Roman_Math.toIs(first);
+		second = Roman_Math.toIs(second);
+
+		if (first.length() < second.length()) {
+			difference = second.replaceFirst(first, "");
+			difference = ("-" + difference);
+		} else {
+			difference = first.replaceFirst(second, "");
+		}
+		
+		String result = Roman_Math.toRomans(difference);
+		
+		return result;
 	}
 }
