@@ -17,10 +17,12 @@ import java.awt.event.ActionEvent;
 
 public class Roman_Calculator_GUI {
 
-	private JFrame frame;
+	private JFrame frmRomanCalculator;
 	private JTextField textFieldFirstRoman;
 	private JTextField textFieldSecondRoman;
 	private JTextField textFieldResult;
+	private JButton btnMultiply;
+	private JButton btnDivide;
 
 	/**
 	 * Launch the application.
@@ -30,7 +32,7 @@ public class Roman_Calculator_GUI {
 			public void run() {
 				try {
 					Roman_Calculator_GUI window = new Roman_Calculator_GUI();
-					window.frame.setVisible(true);
+					window.frmRomanCalculator.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -49,20 +51,21 @@ public class Roman_Calculator_GUI {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 446, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frmRomanCalculator = new JFrame();
+		frmRomanCalculator.setTitle("Roman Calculator");
+		frmRomanCalculator.setBounds(100, 100, 446, 252);
+		frmRomanCalculator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmRomanCalculator.getContentPane().setLayout(null);
 		
 		textFieldFirstRoman = new JTextField();
 		textFieldFirstRoman.setBounds(10, 11, 200, 40);
-		frame.getContentPane().add(textFieldFirstRoman);
+		frmRomanCalculator.getContentPane().add(textFieldFirstRoman);
 		textFieldFirstRoman.setColumns(10);
 		
 		textFieldSecondRoman = new JTextField();
 		textFieldSecondRoman.setColumns(10);
 		textFieldSecondRoman.setBounds(220, 11, 200, 40);
-		frame.getContentPane().add(textFieldSecondRoman);
+		frmRomanCalculator.getContentPane().add(textFieldSecondRoman);
 		
 		JButton btnAdd = new JButton("ADD");
 		btnAdd.addActionListener(new ActionListener() {
@@ -71,7 +74,7 @@ public class Roman_Calculator_GUI {
 			}
 		});
 		btnAdd.setBounds(10, 62, 200, 40);
-		frame.getContentPane().add(btnAdd);
+		frmRomanCalculator.getContentPane().add(btnAdd);
 		
 		JButton btnSubtract = new JButton("SUBTRACT");
 		btnSubtract.addActionListener(new ActionListener() {
@@ -80,7 +83,7 @@ public class Roman_Calculator_GUI {
 			}
 		});
 		btnSubtract.setBounds(220, 62, 200, 40);
-		frame.getContentPane().add(btnSubtract);
+		frmRomanCalculator.getContentPane().add(btnSubtract);
 		
 		textFieldResult = new JTextField("");
 		textFieldResult.addKeyListener(new KeyAdapter() {
@@ -91,8 +94,21 @@ public class Roman_Calculator_GUI {
 		});
 		textFieldResult.setHorizontalAlignment(SwingConstants.CENTER);
 		textFieldResult.setFont(new Font("Times New Roman", Font.BOLD, 30));
-		textFieldResult.setBounds(10, 113, 410, 40);
-		frame.getContentPane().add(textFieldResult);
+		textFieldResult.setBounds(10, 164, 410, 40);
+		frmRomanCalculator.getContentPane().add(textFieldResult);
 		textFieldResult.setColumns(10);
+		
+		btnMultiply = new JButton("MULTIPLY");
+		btnMultiply.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				textFieldResult.setText(Roman_Calculator.multiplyRomans(textFieldFirstRoman.getText(), textFieldSecondRoman.getText()));
+			}
+		});
+		btnMultiply.setBounds(10, 113, 200, 40);
+		frmRomanCalculator.getContentPane().add(btnMultiply);
+		
+		btnDivide = new JButton("DIVIDE");
+		btnDivide.setBounds(220, 113, 200, 40);
+		frmRomanCalculator.getContentPane().add(btnDivide);
 	}
 }

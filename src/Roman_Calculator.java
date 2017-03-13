@@ -36,4 +36,21 @@ public class Roman_Calculator {
 		
 		return result;
 	}
+	
+	public static String multiplyRomans(String firstRoman, String secondRoman) {
+		String first = firstRoman;
+		String second = secondRoman;
+		String product = "";
+		
+		first = Roman_Math.toIs(first);
+		second = Roman_Math.toIs(second);
+		
+		for (String counter = first; !counter.equals(""); counter = counter.replaceFirst("I", "")) {
+			product = product + second;
+		}
+				
+		String result = Roman_Math.toRomans(product);
+		
+		return result;
+	}
 }
