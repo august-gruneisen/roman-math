@@ -58,11 +58,31 @@ public class Roman_Calculator_GUI {
 		frmRomanCalculator.getContentPane().setLayout(null);
 		
 		textFieldFirstRoman = new JTextField();
+		textFieldFirstRoman.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+					if (e.getKeyChar() == 'i' || e.getKeyChar() == 'v' || e.getKeyChar() == 'x' || e.getKeyChar() == 'l' || e.getKeyChar() == 'c' || e.getKeyChar() == 'd' || e.getKeyChar() == 'm') {
+						e.setKeyChar(Character.toUpperCase(e.getKeyChar()));
+					} else if (!(e.getKeyChar() == KeyEvent.VK_I || e.getKeyChar() == KeyEvent.VK_V || e.getKeyChar() == KeyEvent.VK_X || e.getKeyChar() == KeyEvent.VK_L || e.getKeyChar() == KeyEvent.VK_C || e.getKeyChar() == KeyEvent.VK_D || e.getKeyChar() == KeyEvent.VK_M)) {
+						e.consume();					
+					}
+			}
+		});
 		textFieldFirstRoman.setBounds(10, 11, 200, 40);
 		frmRomanCalculator.getContentPane().add(textFieldFirstRoman);
 		textFieldFirstRoman.setColumns(10);
 		
 		textFieldSecondRoman = new JTextField();
+		textFieldSecondRoman.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+					if (e.getKeyChar() == 'i' || e.getKeyChar() == 'v' || e.getKeyChar() == 'x' || e.getKeyChar() == 'l' || e.getKeyChar() == 'c' || e.getKeyChar() == 'd' || e.getKeyChar() == 'm') {
+						e.setKeyChar(Character.toUpperCase(e.getKeyChar()));
+					} else if (!(e.getKeyChar() == KeyEvent.VK_I || e.getKeyChar() == KeyEvent.VK_V || e.getKeyChar() == KeyEvent.VK_X || e.getKeyChar() == KeyEvent.VK_L || e.getKeyChar() == KeyEvent.VK_C || e.getKeyChar() == KeyEvent.VK_D || e.getKeyChar() == KeyEvent.VK_M)) {
+						e.consume();					
+					}
+			}
+		});
 		textFieldSecondRoman.setColumns(10);
 		textFieldSecondRoman.setBounds(220, 11, 200, 40);
 		frmRomanCalculator.getContentPane().add(textFieldSecondRoman);

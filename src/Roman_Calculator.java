@@ -13,6 +13,10 @@ public class Roman_Calculator {
 		
 		String result = Roman_Math.toRomans(sum);
 		
+		if (result.equals("")) {
+			result = "nulla";
+		}
+		
 		return result;
 	}
 	
@@ -24,15 +28,26 @@ public class Roman_Calculator {
 		
 		first = Roman_Math.toIs(first);
 		second = Roman_Math.toIs(second);
-
-		if (first.length() < second.length()) {
-			difference = second.replaceFirst(first, "");
-			difference = ("-" + difference);
-		} else {
-			difference = first.replaceFirst(second, "");
-		}
 		
+		System.out.println(first);
+		System.out.println(second);
+		
+		difference = first.replaceFirst(second, "");
+		
+		if (second.equals("")) {
+			difference = first;
+		} else if (difference.equals(first)) {
+			difference = second.replaceFirst(first, "");
+			if (!difference.equals("")) {
+				difference = ("-" + difference);
+			}
+		}
+				
 		String result = Roman_Math.toRomans(difference);
+		
+		if (result.equals("")) {
+			result = "nulla";
+		}
 		
 		return result;
 	}
@@ -51,6 +66,10 @@ public class Roman_Calculator {
 				
 		String result = Roman_Math.toRomans(product);
 		
+		if (result.equals("")) {
+			result = "nulla";
+		}
+		
 		return result;
 	}
 	
@@ -58,7 +77,7 @@ public class Roman_Calculator {
 		String first = firstRoman;
 		String second = secondRoman;
 		String quotient = "";
-		String remainder = second;
+		String remainder = first;
 		String result = "";
 		
 		first = Roman_Math.toIs(first);
