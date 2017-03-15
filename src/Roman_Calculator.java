@@ -80,8 +80,8 @@ public class Roman_Calculator {
 		first = Roman_Math.toIs(first);
 		second = Roman_Math.toIs(second);
 		
-		for (first.length(); (first.length() >= second.length()); first = first.replaceFirst(second, "")) {
-			remainder = first.replaceFirst(second, "");
+		for (String counter = first; !(counter.replaceFirst(second, "").equals(counter)); counter = counter.replaceFirst(second, "")) {
+			remainder = counter.replaceFirst(second, "");
 			quotient = quotient + "I";
 		}
 		
@@ -90,6 +90,16 @@ public class Roman_Calculator {
 		} else {
 			result = Roman_Math.toRomans(quotient + " remainder " + remainder);
 		}
+		
+		return result;
+	}
+	
+	public static Boolean isCounterGreaterThanSecond(String counterToCheck, String secondToCheck) {
+		Boolean result = true;
+		
+		
+		
+		
 		
 		return result;
 	}
