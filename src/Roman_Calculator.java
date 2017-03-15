@@ -29,9 +29,6 @@ public class Roman_Calculator {
 		first = Roman_Math.toIs(first);
 		second = Roman_Math.toIs(second);
 		
-		System.out.println(first);
-		System.out.println(second);
-		
 		difference = first.replaceFirst(second, "");
 		
 		if (second.equals("")) {
